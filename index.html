@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Encanto - Tu floristería online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Flores Encanto</h1>
+    <div id="cart-icon" onclick="showCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav id="main-nav" style="display: none;">
+    <ul>
+      <li><a href="#" onclick="showCatalog()">Ver Catálogo</a></li>
+      <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Sección de inicio de sesión -->
+    <section id="login-section">
+      <div class="form-container">
+        <h2>Iniciar sesión</h2>
+        <form id="login-form">
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
+      </div>
+    </section>
+
+    <!-- Sección de registro -->
+    <section id="register-section" style="display: none;">
+      <div class="form-container">
+        <h2>Registrarse</h2>
+        <form id="register-form">
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Registrarse</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia sesión aquí</a></p>
+      </div>
+    </section>
+
+    <!-- Sección del catálogo de productos -->
+    <section id="catalog-section" style="display: none;">
+      <h2>Nuestros arreglos florales</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/1vnsWMuCk7pWNFfcQcf8eznhvFIIxlWSlidYKUqogNnqrPfNB/out-0.webp" alt="Ramo de rosas rojas, estilo clásico" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Ramo de Rosas Rojas</h3>
+            <p class="product-price">$49.99</p>
+            <button class="add-to-cart" onclick="addToCart('Ramo de Rosas Rojas', 49.99)">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/jAxlO21MvyL6KFWQg51Zxp37MMV0cX7vaff9fWvsgAMqrPfNB/out-0.webp" alt="Arreglo floral colorido con flores primaverales" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Arreglo Primaveral</h3>
+            <p class="product-price">$59.99</p>
+            <button class="add-to-cart" onclick="addToCart('Arreglo Primaveral', 59.99)">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/Yfcz11a8vnSobCDxnDZwpeasBw0xRVBo2QUfIJqQh7wtrPfNB/out-0.webp" alt="Arreglo de orquídeas blancas en jarrón de cristal" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Orquídeas Elegantes</h3>
+            <p class="product-price">$79.99</p>
+            <button class="add-to-cart" onclick="addToCart('Orquídeas Elegantes', 79.99)">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/biJ5qnNtemTflEdBywfJtsWZnfoDI9I9dhRmPFsXwXerue53E/out-0.webp" alt="Arreglo de girasoles brillantes" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Girasoles Alegres</h3>
+            <p class="product-price">$54.99</p>
+            <button class="add-to-cart" onclick="addToCart('Girasoles Alegres', 54.99)">Añadir al carrito</button>
+          </div>
+        </div>
+        <!-- Nuevos productos -->
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/I4HieliSWcSZGSdq9PI0jT6aT9diysm511esgr4LG6Y11nfmA/out-0.webp" alt="Arreglo de tulipanes multicolores" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Tulipanes Variados</h3>
+            <p class="product-price">$64.99</p>
+            <button class="add-to-cart" onclick="addToCart('Tulipanes Variados', 64.99)">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/zHSw9ns2ChrNOdhbOE9x5UFmTi2zlwdC57vEfKMmQry66zvJA/out-0.webp" alt="Arreglo de lirios exóticos" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Lirios Exóticos</h3>
+            <p class="product-price">$69.99</p>
+            <button class="add-to-cart" onclick="addToCart('Lirios Exóticos', 69.99)">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://replicate.delivery/yhqm/nNYpBmx9Xl5yFlmiwSXXaKPZL8GmffHZyLqwVjYRtA211nfmA/out-0.webp" alt="Ramo de claveles en varios colores" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">Claveles Coloridos</h3>
+            <p class="product-price">$44.99</p>
+            <button class="add-to-cart" onclick="addToCart('Claveles Coloridos', 44.99)">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección del carrito de compras -->
+    <section id="cart-page" style="display: none;">
+      <h2>Tu Carrito</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">
+        <p>Total: $<span id="cart-total">0.00</span></p>
+      </div>
+      <form id="checkout-form">
+        <h3>Método de pago</h3>
+        <div class="radio-group">
+          <label class="custom-radio">
+            <input type="radio" name="payment-method" value="qr" required>
+            <span class="radio-label">QR</span>
+          </label>
+          <label class="custom-radio">
+            <input type="radio" name="payment-method" value="efectivo" required>
+            <span class="radio-label">Efectivo</span>
+          </label>
+          <label class="custom-radio">
+            <input type="radio" name="payment-method" value="tarjeta" required>
+            <span class="radio-label">Tarjeta</span>
+          </label>
+        </div>
+
+        <h3>Método de entrega</h3>
+        <div class="radio-group">
+          <label class="custom-radio">
+            <input type="radio" name="delivery-method" value="delivery" required>
+            <span class="radio-label">Delivery</span>
+          </label>
+          <label class="custom-radio">
+            <input type="radio" name="delivery-method" value="tienda" required>
+            <span class="radio-label">Recoger en la Tienda</span>
+          </label>
+        </div>
+        <button id="checkout-btn" type="submit">Proceder al pago</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
